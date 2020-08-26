@@ -1,0 +1,93 @@
+<!--
+<h1>Password Generator</h1>
+
+<div>
+<label>Enter Length</label>
+<input (input)="onChangeLength($event.target.value)"/>
+</div>
+
+<div>
+  <label>Use Letters</label>
+  <input (change)="onChangeUseLetters()" type="checkbox">
+</div>
+
+<div>
+  <label>Use Numbers</label>
+  <input (change)="onChangeUseNumbers()" type="checkbox">
+</div>
+
+<div>
+  <label>Use Symbols</label>
+  <input (change)="onChangeUseSymbols()" type="checkbox">
+</div>
+
+<div>
+<button 
+  [disabled]="!(length && (includeLetters || includeSymbols || includeNumbers))" 
+  (click)="onButtonClick()">
+  Generate!
+</button>
+<!--Event Binding Syntax, we do not write this/component, just function name-->
+
+<!--</div>
+
+<!--() means to tell the button listen for some event !-->
+<!--
+<div>
+  <label>Your Password</label>
+  <input [value]="password" />
+<!--Property Binding Syntax: []name of the property we would like to set "" name of the property or method name in our class to put here-->
+<!--</div>
+
+<!--show the passpord property on the webpage-->
+<div class="container">
+  <div class="columns is-centered">
+    <div class="box column is-one-third">
+      <h1 class="title has-text-centered">Password Generator</h1>
+
+      <div class="field">
+        <label>Length</label>
+        <input class="input" (input)="onChangeLength($event.target.value)" />
+      </div>
+
+      <div class="field">
+        <div class="control">
+          <label class="checkbox">
+            <input (change)="onChangeUseLetters()" type="checkbox" />
+            Use Letters
+          </label>
+        </div>
+      </div>
+
+      <div class="field">
+        <div class="control">
+          <label class="checkbox">
+            <input (change)="onChangeUseNumbers()" type="checkbox" />
+            Use Numbers
+          </label>
+        </div>
+      </div>
+
+      <div class="field">
+        <div class="control">
+          <label class="checkbox">
+            <input (change)="onChangeUseSymbols()" type="checkbox" />
+            Use Symbols
+          </label>
+        </div>
+      </div>
+
+      <button [disabled]="
+          !(length && (includeLetters || includeSymbols || includeNumbers))
+        " (click)="onButtonClick()" class="button is-link is-fullwidth">
+        Generate!
+      </button>
+
+      <div class="box" *ngIf="password">
+        <!--to check the ng component password property-->
+        <label>Your Password</label>
+        <input class="input" [value]="password" />
+      </div>
+    </div>
+  </div>
+</div>
